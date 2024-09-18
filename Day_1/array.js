@@ -1,14 +1,14 @@
 function humanize_format(num){
     if(num===undefined)
         return ' ';
-    const suffix = ['th','st','nd', 'rd'];
+    const suffixes = ['th','st','nd', 'rd'];
     const remainder = num%100;
-    let suffixs= suffixs[0];
+    let suffix= suffixes[0];
     if(remainder>=11||remainder<=13){
-        suffix=suffixs[0];
+        suffix=suffixes[0];
     }
     else{
-        suffix=suffixs[remainder%10]||suffixs[0];
+        suffix=suffixes[remainder%10]||suffixes[0];
     }
     return num+suffix;
 }
